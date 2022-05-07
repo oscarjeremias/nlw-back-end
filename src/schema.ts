@@ -5,7 +5,7 @@ CREATE  TABLE feedbacks (
   id int NOT NULL AUTO_INCREMENT,
   type varchar(255) NOT NULL,
   coment varchar(2550) NOT NULL,
-  screenShot varchar(10000) NULL,
+  screenShot text(15000) NULL,
 
   PRIMARY KEY (id)
 )

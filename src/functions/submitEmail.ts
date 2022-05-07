@@ -9,7 +9,6 @@ const transport = nodemailer.createTransport({
 
 export function submitEmail(req: Request) {
   const feedback = req.body;
-
   transport.sendMail(
     {
       from: "Equipe Feedback <oi@feedback.com>",
@@ -19,6 +18,7 @@ export function submitEmail(req: Request) {
         `<div style="font-family: sans-serif; color: #111;">`,
         `<p><Tipo de feedback ${feedback.type}/p>`,
         `<p>Comentario ${feedback.coment}</p>`,
+        feedback.screenShot ? `<img src="${feedback.screenShot}">` : ``,
         `</div>`,
       ].join(""),
     },
